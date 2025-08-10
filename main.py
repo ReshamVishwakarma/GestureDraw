@@ -10,3 +10,10 @@ cap.set(3, 640)
 cap.set(4, 1000)
 cap.set(10, 150)
 
+#Mediapipe Hand
+mpHands = mp.solutions.hands
+hands = mpHands.Hands()
+mpdraw = mp.solutions.drawing_utils
+
+pasttime = 0
+
