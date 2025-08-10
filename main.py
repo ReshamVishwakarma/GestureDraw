@@ -114,4 +114,11 @@ while True:
     cv2.imshow('cam', frame)
     cv2.imshow('canvas', canvas)
 
-    
+    key = cv2.waitKey(1) & 0xFF
+    if key == ord('q'):
+        break
+
+    elif key == ord('s'):
+        filename = f"drawing_{int(time.time())}.png"
+        cv2.imwrite(filename, canvas)
+        print(f"Drawing saved as {filename}")
