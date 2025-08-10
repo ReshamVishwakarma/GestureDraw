@@ -52,4 +52,11 @@ while True:
     results = hands.process(img)
     landmark = []
 
-    
+    if results.multi_hand_landmarks:
+        for hn in results.multi_hand_landmarks:
+            for id, lm in enumerate(hn, landmark):
+                h, w, c = frame.shape
+                cx, cy = int(lm.x * w), int(lm.y * h)
+                landmark.append([id, cx, cy])
+
+            mpdraw.draw_landmarks(frame, h, mpHands.HAND_CONNECTIONS)    
