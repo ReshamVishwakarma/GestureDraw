@@ -79,4 +79,14 @@ while True:
 
 
                             
-        
+        #Drawing Mode
+        elif landmark[8][2] < landmark[6][2]:
+            if xp == 0 and yp == 0:
+                xp, yp = x1, y1
+                if col == (0, 0, 0):
+                    cv2.line(frame, (xp, yp), (x1, y1), col, 75)
+                    cv2.line(canvas, (xp, yp), (x1, y1), col, 75)
+                else:
+                    cv2.line(frame, (xp, yp), (x1, y1), col, 13)
+                    cv2.line(canvas, (xp, yp), (x1, y1), col, 13)
+                xp, yp = x1, y1        
