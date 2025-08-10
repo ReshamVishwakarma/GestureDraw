@@ -59,7 +59,7 @@ while True:
                 cx, cy = int(lm.x * w), int(lm.y * h)
                 landmark.append([id, cx, cy])
 
-            mpdraw.draw_landmarks(frame, h, mpHands.HAND_CONNECTIONS)    
+            mpdraw.draw_landmarks(frame, hn, mpHands.HAND_CONNECTIONS)    
 
     if len(landmark) != 0:
         x1, y1 = landmark[8][1], landmark[8][2]
