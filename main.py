@@ -43,3 +43,13 @@ col = color_list[0]
 
 xp, yp = 0, 0
 canvas = np.zeros((480, 640, 3), np.uint8)
+
+while True:
+    success, frame = cap.read()
+    frame = cv2.flip(frame, 1)
+    
+    img = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    results = hands.process(img)
+    landmark = []
+
+    
