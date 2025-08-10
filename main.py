@@ -2,7 +2,7 @@ import cv2
 import mediapipe as mp
 import os
 import time
-import numpy as mp
+import numpy as np
 
 #Webcam initialization
 cap = cv2.VideoCapture(0)
@@ -40,3 +40,6 @@ for img_name in mylist:
 
 header = overlist[0]
 col = color_list[0]    
+
+xp, yp = 0, 0
+canvas = np.zeros((480, 640, 3), np.uint8)
