@@ -54,7 +54,7 @@ while True:
 
     if results.multi_hand_landmarks:
         for hn in results.multi_hand_landmarks:
-            for id, lm in enumerate(hn, landmark):
+            for id, lm in enumerate(hn.landmark):
                 h, w, c = frame.shape
                 cx, cy = int(lm.x * w), int(lm.y * h)
                 landmark.append([id, cx, cy])
