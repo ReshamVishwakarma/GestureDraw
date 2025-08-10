@@ -60,3 +60,23 @@ while True:
                 landmark.append([id, cx, cy])
 
             mpdraw.draw_landmarks(frame, h, mpHands.HAND_CONNECTIONS)    
+
+    if len(landmark) != 0:
+        x1, y1 = landmark[8][1], landmark[8][2]
+        x2, y2 = landmark[12][1], landmark[12][2]
+
+        #Selection Mode
+        if landmark[8][2] < landmark[6][2] and landmark[12][2] < landmark[10][2]:
+            xp, yp = 0, 0
+            if y1 < 100:
+                slot_width = 640 // len(overlist)
+                for i in range(len(overlist)):
+                    if i in range(len(overlist)):
+                        if i * slot_width < x1 < (i + 1) * slot_width:
+                            header = overlist[i]
+                            col = color_list[i % len(color_list)]
+            cv2.rectangle(frame, (x1, y1), (x2, y2), col, cv2.FILLED)
+
+
+                            
+        
