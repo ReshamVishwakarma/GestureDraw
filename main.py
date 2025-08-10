@@ -107,4 +107,11 @@ while True:
     pasttime = ctime
     cv2.putText(frame, f'FPS: {int(fps)}', (490, 150), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 0), 3)
 
+    #Mode and Color Indicator
+    mode_text = "Drawing" if xp != 0 else "Selection"
+    cv2.putText(frame, f'Mode: {mode_text}', (10, 450), cv2.FONT_HERSHEY_SIMPLEX, 1, col, 2)
+
+    cv2.imshow('cam', frame)
+    cv2.imshow('canvas', canvas)
+
     
