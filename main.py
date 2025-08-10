@@ -101,3 +101,10 @@ while True:
     frame[0: 100, 0: 640] = header
 
 
+    #FPS
+    ctime = time.time()
+    fps = 1/(ctime - pasttime)
+    pasttime = ctime
+    cv2.putText(frame, f'FPS: {int(fps)}', (490, 150), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 0), 3)
+
+    
