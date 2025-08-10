@@ -122,3 +122,6 @@ while True:
         filename = f"drawing_{int(time.time())}.png"
         cv2.imwrite(filename, canvas)
         print(f"Drawing saved as {filename}")
+
+cap.release()
+cv2.destroyAllWindows()        
