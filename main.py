@@ -90,3 +90,14 @@ while True:
                     cv2.line(frame, (xp, yp), (x1, y1), col, 13)
                     cv2.line(canvas, (xp, yp), (x1, y1), col, 13)
                 xp, yp = x1, y1        
+
+    #Blend Canvas
+    imgGray = cv2.cvtColor(canvas, cv2.COLOR_BGR2GRAY)
+    _, imgInv = cv2.threshold(imgGray, 50, 255, cv2.THRESH_BINARY_INV)
+    imgInv = cv2.cvtColor(imgInv, cv2.COLOR_GRAY2BGR)
+    frame = cv2.bitwise_and(frame, imgInv)
+    frame = cv2.bitwise_or(frame, canvas)
+
+    frame[0: 100, 0: 640] = header
+
+
